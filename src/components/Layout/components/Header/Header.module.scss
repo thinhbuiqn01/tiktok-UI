@@ -22,8 +22,12 @@
 .input {
 }
 
-.search {
+.search,
+.search-result {
     width: 346px;
+}
+
+.search {
     height: var(--search-height);
     display: flex;
     background: rgba(22, 24, 35, 0.06);
@@ -41,7 +45,7 @@
         background-color: transparent;
         caret-color: var(--primary);
     }
-
+    /* khi khong co placeholder set mau search-btn */
     input:not(:placeholder-shown) ~ .search-btn {
         color: rgba(22, 24, 35, 0.75);
     }
@@ -56,22 +60,32 @@
         background-color: rgba(22, 24, 35, 0.12);
     }
 
+    /* set border-color when focus in button */
     &:focus-within {
         border-color: rgba(22, 24, 35, 0.2);
     }
 }
+
 .clear,
 .loading {
     position: absolute;
+    /* calc 2 button loading and clear */
     right: calc(var(--search-button-width) + 16px);
     top: 50%;
     transform: translateY(-50%);
     color: rgba(22, 24, 35, 0.34);
 }
 
+.search-title {
+    font-size: 1.4rem;
+    font-weight: 600px;
+    color: rgba(22, 24, 35, 0.5);
+}
+
 .search-btn {
     width: var(--search-button-width);
     height: 100%;
+    /* border radius button */
     border-top-right-radius: var(--search-border-radius);
     border-bottom-right-radius: var(--search-border-radius);
     font-size: 2rem;
