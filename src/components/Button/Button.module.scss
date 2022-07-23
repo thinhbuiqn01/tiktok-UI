@@ -1,0 +1,79 @@
+.wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    padding: 9px 16px;
+    min-width: 80px;
+    border-radius: 4px;
+    /* cover pointer to hand */
+    cursor: pointer;
+    font-weight: 700;
+    background-color: var(--white);
+    border: 1px solid transparent;
+    user-select: none;
+
+    /* double button next to -> + .wrapper */
+    + .wrapper {
+        margin-left: 12px;
+    }
+
+    &.disabled {
+        /* ket thuc hieu ung chuot */
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
+}
+
+.rounded {
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+    color: rgba(22, 24, 35, 0.75);
+    background: none;
+
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.primary {
+    color: var(--white);
+    background-color: var(--primary);
+
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fc5576;
+    }
+}
+.outline {
+    color: var(--primary);
+    border-color: currentColor;
+
+    :hover {
+        border-color: currentColor;
+        background-color: rgba(254, 44, 85, 0.06);
+    }
+}
+
+.text {
+    &:hover {
+        /* them "Gach. Chan" */
+        text-decoration: underline;
+    }
+}
+
+.small {
+    min-width: 88px;
+    padding: 4px 16px;
+}
+
+.large {
+    padding: 14px 16px;
+    min-width: 164px;
+}
