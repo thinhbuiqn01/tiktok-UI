@@ -8,7 +8,6 @@ import Header from './Header';
 import { useState } from 'react';
 
 const cx = classNames.bind(styles);
-const timeHide = 500;
 
 function Menu({ children, items = [] }) {
     const [history, setHistory] = useState([{ data: items }]);
@@ -17,7 +16,6 @@ function Menu({ children, items = [] }) {
     const renderItems = () => {
         return current.data.map((item, index) => {
             const isParent = !!item.children;
-            console.log(isParent);
             return (
                 <MenuItem
                     key={index}
@@ -36,7 +34,8 @@ function Menu({ children, items = [] }) {
         <Tippy
             placement="bottom-end"
             interactive
-            delay={[0, timeHide]}
+            offset={[12, 8]}
+            delay={[0, 700]}
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PopperWrapper className={cx('menu-popper')}>
@@ -52,6 +51,10 @@ function Menu({ children, items = [] }) {
                     </PopperWrapper>
                 </div>
             )}
+            /* khi thoát khỏi giao diện render lại trang mặc định */
+            onHide={() => {
+                setHistory((prev) => prev.slice(0, 1));
+            }}
         >
             {children}
         </Tippy>
