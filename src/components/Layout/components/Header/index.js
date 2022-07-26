@@ -1,25 +1,25 @@
-import classNames from 'classnames/bind';
-import Tippy from '@tippyjs/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faEllipsisVertical,
-    faLanguage,
     faCircleQuestion,
-    faKeyboard,
-    faGear,
-    faUser,
-    faCoins,
-    faSignOut,
     faCloudUpload,
+    faCoins,
+    faEllipsisVertical,
+    faGear,
+    faKeyboard,
+    faLanguage,
+    faSignOut,
+    faUser,
 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Tippy from '@tippyjs/react';
+import classNames from 'classnames/bind';
 import 'tippy.js/dist/tippy.css';
-import Button from '~/components/Button';
-import styles from './Header.module.scss';
+
 import images from '~/asset/images';
-import Menu from '~/components/Popper/Menu';
-import { UploadIcon } from '~/components/Icons';
+import Button from '~/components/Button';
 import Image from '~/components/Image';
+import Menu from '~/components/Popper/Menu';
 import Search from '../Search';
+import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -118,7 +118,7 @@ function Header() {
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-aiso/65d3c6b1d1e205c75536ccf1f26d552d~c5_100x100.jpeg?x-expires=1658934000&x-signature=usSDmJL79PUn1WOjV1725lgOi%2BM%3D"
                                 alt="Nguyen Van A"
-                                //fallback="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
+                                fallback="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
