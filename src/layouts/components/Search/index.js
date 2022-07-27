@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useRef, useState } from 'react';
 import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/services/searchService';
 import { wrapper as ProperWrapper } from '~/components/Popper';
 import AccountItem from '../Accountitem';
 import styles from './Search.module.scss';
@@ -24,7 +24,9 @@ function Search() {
 
     const handleSearch = (e) => {
         const searchValue = e.target.value;
-        setSearchValue(searchValue);
+        if (!searchValue.startsWith(' ')) {
+            setSearchValue(searchValue);
+        }
     };
 
     const handleClear = () => {
