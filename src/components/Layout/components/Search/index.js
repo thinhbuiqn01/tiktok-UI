@@ -23,7 +23,8 @@ function Search() {
     const inputRef = useRef();
 
     const handleSearch = (e) => {
-        setSearchValue(e.target.value);
+        const searchValue = e.target.value;
+        setSearchValue(searchValue);
     };
 
     const handleClear = () => {
@@ -56,6 +57,8 @@ function Search() {
         fetchApi();
         /* gán searchValue = deBounced */
     }, [deBounced]);
+
+    const handleSubmit = (e) => e.preventDefault();
 
     return (
         <HeadlessTippy
@@ -93,7 +96,7 @@ function Search() {
                     </button>
                 )}
                 {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={handleSubmit}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
             </div>
