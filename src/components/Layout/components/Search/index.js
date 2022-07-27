@@ -1,9 +1,10 @@
 import classNames from 'classnames/bind';
 import HeadlessTippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useEffect, useRef, useState } from 'react';
 import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-import { useEffect, useRef, useState } from 'react';
+import * as searchServices from '~/apiServices/searchServices';
 import { wrapper as ProperWrapper } from '~/components/Popper';
 import AccountItem from '../Accountitem';
 import styles from './Search.module.scss';
@@ -42,20 +43,17 @@ function Search() {
         if (!deBounced.trim()) {
             setSearchResult([]);
             return;
-        } /* mã hóa ký tự đặt biệt trên URL */
+        }
 
-        setLoading(true);
+        const fetchApi = async () => {
+            setLoading(true);
+            const result = await searchServices.search(deBounced);
 
-        /* gán searchValue = deBounced */
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(deBounced)}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResult(res.data);
-                setLoading(false);
-            })
-            .catch(() => {
-                setLoading(false);
-            });
+            setSearchResult(result);
+
+            setLoading(false);
+        };
+        fetchApi();
         /* gán searchValue = deBounced */
     }, [deBounced]);
 
