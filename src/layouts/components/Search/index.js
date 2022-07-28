@@ -6,7 +6,7 @@ import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-s
 
 import * as searchServices from '~/services/searchService';
 import { wrapper as ProperWrapper } from '~/components/Popper';
-import AccountItem from '../Accountitem';
+import AccountItem from '../../../components/Accountitem';
 import styles from './Search.module.scss';
 import { useDebounce } from '~/hooks';
 
