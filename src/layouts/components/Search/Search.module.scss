@@ -16,6 +16,9 @@
         flex: 1;
         height: 100%;
         color: var(--black);
+        /* không cho thanh tìm kiếm chạy qua khỏi nút "clear" */
+        padding-right: 40px;
+
         border: none;
         font-family: var(--font-family);
         font-size: 1.6rem;

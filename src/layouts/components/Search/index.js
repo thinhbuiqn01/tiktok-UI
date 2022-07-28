@@ -15,10 +15,10 @@ const cx = classNames.bind(styles);
 function Search() {
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
-    const [showResult, setShowResult] = useState(true);
+    const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false);
-
-    const deBounced = useDebounce(searchValue, 500);
+    
+    const deBouncedValue = useDebounce(searchValue, 500);
 
     const inputRef = useRef();
 
@@ -42,23 +42,23 @@ function Search() {
     };
 
     useEffect(() => {
-        /* gán searchValue = deBounced */
-        if (!deBounced.trim()) {
+        /* gán searchValue = deBouncedValue */
+        if (!deBouncedValue.trim()) {
             setSearchResult([]);
             return;
         }
 
         const fetchApi = async () => {
             setLoading(true);
-            const result = await searchServices.search(deBounced);
+            const result = await searchServices.search(deBouncedValue);
 
             setSearchResult(result);
 
             setLoading(false);
         };
         fetchApi();
-        /* gán searchValue = deBounced */
-    }, [deBounced]);
+        /* gán searchValue = deBouncedValue */
+    }, [deBouncedValue]);
 
     const handleSubmit = (e) => e.preventDefault();
 
@@ -73,6 +73,7 @@ function Search() {
                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                         <ProperWrapper>
                             <h4 className={cx('search-title')}> Accounts</h4>
+                            {/* tách hàm này */}
                             {searchResult.map((result) => (
                                 <AccountItem key={result.id} data={result} />
                             ))}
@@ -100,6 +101,7 @@ function Search() {
                             <FontAwesomeIcon icon={faCircleXmark} />
                         </button>
                     )}
+
                     {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
                     <button className={cx('search-btn')} onMouseDown={handleSubmit}>
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
