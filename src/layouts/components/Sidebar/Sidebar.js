@@ -122,10 +122,10 @@ function Sidebar() {
                         </a>
                     </div>
                     <div className={cx('div-link-container')}>
-                        <span className={cx('div-nav-copyright')}>
-                        </span>
+                        <span className={cx('div-nav-copyright')}></span>
                     </div>
                 </div>
+                <div className={cx('div-container')}>@ 2022 TikTok</div>
             </Menu>
         </aside>
     );

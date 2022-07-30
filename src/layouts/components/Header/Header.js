@@ -40,6 +40,70 @@ const MENU_ITEMS = [
                     code: 'vn',
                     title: 'Tiếng Việt',
                 },
+                {
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    code: 'vn',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    code: 'vn',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    code: 'vn',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    code: 'vn',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    code: 'vn',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    code: 'vn',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    code: 'vn',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    code: 'vn',
+                    title: 'Tiếng Việt',
+                },
             ],
         },
     },
