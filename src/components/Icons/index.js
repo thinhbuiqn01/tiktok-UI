@@ -90,3 +90,14 @@ export const LiveIcon = ({ className, width = '3.2rem', height = '3.2rem' }) => 
         <path d="M15 15.134C15.6667 15.5189 15.6667 16.4811 15 16.866L12 18.5981C11.3333 18.983 10.5 18.5019 10.5 17.7321L10.5 14.2679C10.5 13.4981 11.3333 13.017 12 13.4019L15 15.134Z"></path>
     </svg>;
 };
+
+export const MusicIcon = ({ className, width = '3.2rem', height = '3.2rem' }) => {
+    <svg
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+        width={width}
+        height={height}
+        className={className}
+    >
+    </svg>;
+};
