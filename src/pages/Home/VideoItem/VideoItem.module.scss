@@ -99,5 +99,44 @@ h4 {
 .action {
     position: absolute;
     bottom: 24px;
-    right: 0;
+    right: 24px;
+    text-align: center;
+}
+
+.action-icon {
+    width: 46px;
+    height: 46px;
+    line-height: 52px;
+    background-color: rgba(22, 24, 35, 0.06);
+    cursor: pointer;
+    border-radius: 50%;
+    margin-top: 8px;
+    margin-bottom: 6px;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.14);
+    }
+}
+
+.icon {
+    font-size: 2rem;
+    line-height: 1px;
+    padding-top: 4px;
+    color: #000;
+}
+
+.action-like {
+    .icon {
+        &:focus-within {
+            color: pink;
+        }
+    }
+}
+.action-comment {
+}
+
+.action-share {
+}
+
+.action-count {
 }

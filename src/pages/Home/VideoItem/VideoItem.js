@@ -1,14 +1,27 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import { faCommentDots, faHeart, faMusic, faShare } from '@fortawesome/free-solid-svg-icons';
 
 import Image from '~/components/Image';
-import { MusicIcon } from '~/components/Icons';
 import config from '~/config';
 import styles from './VideoItem.module.scss';
 import Button from '~/components/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 function VideoItem({ className }) {
+    const [countLike, setCountLike] = useState(999);
+
+    const handleCountLike = () => {
+        const prevCount = countLike;
+        if (countLike === prevCount) {
+            setCountLike(prevCount + 1);
+        } else {
+            setCountLike(prevCount - 1);
+        }
+    };
+
     return (
         <div className={cx('recommend__list')}>
             <div className={cx('avatar')}>
@@ -48,7 +61,7 @@ function VideoItem({ className }) {
                     </div>
                     <div className={cx('video-music')}>
                         <Link to={config.routes.profile}>
-                            <MusicIcon />
+                            <FontAwesomeIcon icon={faMusic} />
                             <span className={cx('music-title')}> Nhạc nền span - út nhị mino</span>
                         </Link>
                     </div>
@@ -59,9 +72,24 @@ function VideoItem({ className }) {
                         <video src="" className={cx('content-src')} controls></video>
                     </div>
                     <div className={cx('action')}>
-                        <div className={cx('action-like')}>Like</div>
-                        <div className={cx('action-comment')}>Comment</div>
-                        <div className={cx('action-share')}>Share</div>
+                        <div className={cx('action-like')} onClick={handleCountLike}>
+                            <div className={cx('action-icon')}>
+                                <FontAwesomeIcon icon={faHeart} className={cx('icon')} />
+                            </div>
+                            <span className={cx('action-count ')}> {countLike}</span>
+                        </div>
+                        <div className={cx('action-comment')}>
+                            <div className={cx('action-icon')}>
+                                <FontAwesomeIcon icon={faCommentDots} className={cx('icon')} />
+                            </div>
+                            <span className={cx('action-count')}> 5555</span>
+                        </div>
+                        <div className={cx('action-share')}>
+                            <div className={cx('action-icon')}>
+                                <FontAwesomeIcon icon={faShare} className={cx('icon')} />
+                            </div>
+                            <span className={cx('action-count')}> 5555</span>
+                        </div>
                     </div>
                 </div>
             </div>
