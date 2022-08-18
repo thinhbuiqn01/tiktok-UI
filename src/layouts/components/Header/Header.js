@@ -40,70 +40,6 @@ const MENU_ITEMS = [
                     code: 'vn',
                     title: 'Tiếng Việt',
                 },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vn',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vn',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vn',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vn',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vn',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vn',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vn',
-                    title: 'Tiếng Việt',
-                },
-                {
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    code: 'vn',
-                    title: 'Tiếng Việt',
-                },
             ],
         },
     },
@@ -184,7 +120,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-aiso/65d3c6b1d1e205c75536ccf1f26d552d~c5_100x100.jpeg?x-expires=1658934000&x-signature=usSDmJL79PUn1WOjV1725lgOi%2BM%3D"
+                                src=""
                                 alt="Nguyen Van A"
                                 fallback="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                             />
