@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+}
+
+.info {
+    display: flex;
+    cursor: pointer;
+}
+
+.nick-name {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    display: inline-block;
+    margin-right: 4px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.name {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    display: inline-block;
+    line-height: 28px;
+}

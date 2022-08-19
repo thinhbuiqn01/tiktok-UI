@@ -1,6 +1,14 @@
 import { useEffect, useState } from 'react';
-import Name from './Name';
-const axios = require('axios').default;
+import classNames from 'classnames/bind';
+import styles from './HomeVideo.module.scss';
+import Image from '~/components/Image';
+import Title from './Title';
+import Video from './Video';
+import Action from './Action';
+import Button from '~/components/Button';
+
+const cx = classNames.bind(styles);
+
 function HomeVideo() {
     const [result, setResult] = useState([]);
     useEffect(() => {
@@ -19,7 +27,7 @@ function HomeVideo() {
                 }
             ]
          */
-        fetch('http://127.0.0.1:8000/fake-api')
+        fetch('http://127.0.0.1:8000/video')
             .then((res) => res.json())
             .then((res) => {
                 const data = res;
@@ -34,11 +42,26 @@ function HomeVideo() {
         return;
     }, []);
 
-    // lần đâu nói mount vào DOM mà api chưa kịp call nên nó bị rỗng nên nó không phải là mảng nên nó lỗi thêm dẩu "?" là đc
     return (
-        <div>
+        <div className={cx('wrapper')}>
             {result?.map((result, index) => (
-                <Name data={result} key={index} />
+                <div className={cx('recommend__list')} key={index}>
+                    <Button primary small className={cx('btn-follow')}>
+                        Follow
+                    </Button>
+                    <div className={cx('avatar')}>
+                        <img alt="" src={result.avatar} className={cx('avatar-img')} />
+                    </div>
+                    <div className={cx('content')}>
+                        <Title data={result} className={cx('title')} />
+                        <div className={cx('video')}>
+                            <Video data={result} />
+                        </div>
+                        <div className={cx('action')}>
+                            <Action data={result} />
+                        </div>
+                    </div>
+                </div>
             ))}
         </div>
     );

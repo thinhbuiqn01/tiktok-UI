@@ -1,0 +1,54 @@
+.wrapper {
+    position: relative;
+    width: 692px;
+    height: 624px;
+}
+
+.recommend__list {
+    padding: 8px 0;
+    margin: 8px 0;
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.content {
+}
+
+.avatar {
+    padding: 8px;
+}
+
+.avatar-img {
+    border-radius: 50%;
+    width: 56px;
+}
+
+.header-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    display: inline-block;
+    margin-right: 4px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.header-nickname {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    display: inline-block;
+    line-height: 28px;
+}
+.btn-follow {
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+.video {
+    width: 300px;
+    height: 100%;
+}

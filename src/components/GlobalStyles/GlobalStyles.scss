@@ -12,8 +12,6 @@
 
     // font
     --font-family: 'ProximaNova', sans-serif;
-
-
 }
 
 * {
@@ -105,4 +103,12 @@ body {
     .tippy-box[data-placement^='bottom'] > .tippy-arrow::before {
         top: -8px;
     }
+}
+h3 {
+    padding: 0;
+    margin: 0;
+}
+h4 {
+    padding: 0;
+    margin: 0;
 }
