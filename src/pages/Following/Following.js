@@ -1,5 +1,11 @@
+import HomeVideo from '~/layouts/components/HomeVideo';
+
 function Following() {
-    return <h2>FollowingPage</h2>;
+    return (
+        <div>
+            <HomeVideo />
+        </div>
+    );
 }
 
 export default Following;

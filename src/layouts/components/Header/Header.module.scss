@@ -51,6 +51,17 @@
     padding: 4px 12px;
     cursor: pointer;
 }
+
+.upload {
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    padding: 4px 32px;
+    border-radius: 2px;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
 .user-avatar {
     margin-left: 24px;
     position: relative;
@@ -60,5 +71,57 @@
     -webkit-background-size: cover;
     background-size: cover;
     border-radius: 50%;
+    cursor: pointer;
+}
+
+.btn-inbox {
+    position: relative;
+}
+
+.view-inbox {
+    text-align: left;
+    position: absolute;
+    padding: 16px;
+    transform: translateX(-72%);
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 12%) 0px -4px 32px;
+    z-index: 1000;
+    border-radius: 8px;
+    width: 364px;
+    height: 500px;
+}
+.group-item {
+    width: 354px;
+    margin-top: 24px;
+    flex-flow: row wrap;
+    display: flex;
+}
+
+.span-item {
+    background: rgb(241, 241, 241);
+    display: block;
+    border-radius: 999px;
+    margin-right: 6px;
+    padding: 4px 10px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.notify {
+    margin-top: 12px;
+    font-size: 2rem;
+}
+
+.inbox-list {
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+    align-items: flex-start;
     cursor: pointer;
 }

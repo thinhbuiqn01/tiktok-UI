@@ -20,7 +20,7 @@ function Sidebar() {
                 />
                 <MenuItem title="LIVE" to={config.routes.live} icon={<FontAwesomeIcon icon={faVideoCamera} />} />
                 <SuggestedAccounts label="Suggested accounts" />
-                <SuggestedAccounts label="Suggested accounts" />
+                <SuggestedAccounts label="Following accounts" />
             </Menu>
         </aside>
     );
