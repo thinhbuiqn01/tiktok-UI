@@ -86,9 +86,20 @@
     background-color: white;
     box-shadow: rgb(0 0 0 / 12%) 0px -4px 32px;
     z-index: 1000;
+    margin-top: 20px;
     border-radius: 8px;
     width: 364px;
     height: 500px;
+    display: none;
+}
+.view-inbox::before {
+    position: absolute;
+    right: 74px;
+    border: 20px solid;
+    border-color: transparent transparent white transparent;
+    top: -36px;
+    content: '';
+    display: block;
 }
 .group-item {
     width: 354px;
@@ -119,7 +130,6 @@
 .inbox-list {
     font-size: 14px;
     line-height: 17px;
-    display: flex;
     flex-direction: row;
     padding: 10px 0;
     align-items: flex-start;

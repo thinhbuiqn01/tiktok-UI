@@ -6,7 +6,7 @@ import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-s
 
 import * as searchServices from '~/services/searchService';
 import { wrapper as ProperWrapper } from '~/components/Popper';
-import AccountItem from '../../../components/Accountitem';
+import AccountItem from '~/components/AccountItem';
 import styles from './Search.module.scss';
 import { useDebounce } from '~/hooks';
 
@@ -61,7 +61,6 @@ function Search() {
     }, [deBouncedValue]);
 
     const handleSubmit = (e) => e.preventDefault();
-
     return (
         //Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context.
         // -> this is fix warning tippy

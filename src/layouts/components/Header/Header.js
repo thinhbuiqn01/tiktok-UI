@@ -1,6 +1,5 @@
 import {
     faCircleQuestion,
-    faCloudUploadAlt,
     faCoins,
     faEllipsisVertical,
     faGear,
@@ -27,6 +26,7 @@ import { faMessage, faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import FillItem from '~/components/FillItem';
 import Notify from '~/components/Notify';
 import InboxList from '~/components/InboxList/InboxList';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
@@ -95,9 +95,18 @@ function Header() {
                 break;
         }
     };
+    const [hidden, setHidden] = useState(false);
+    let style = {};
+    const handleShowNotify = () => {
+        setHidden(true);
+        if (hidden === false) {
+            style = {
+                display: 'hidden',
+            };
+        }
+    };
 
     const itemNotify = ['All Activity', 'Likes', 'Comments', 'Mentions and tag', 'Follower'];
-
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -111,9 +120,11 @@ function Header() {
                     {currentUser ? (
                         <>
                             <Tippy content="Upload video" placement="bottom">
-                                <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faPlus} className={cx('upload')} />
-                                </button>
+                                <Link to={config.routes.upload}>
+                                    <button className={cx('action-btn')}>
+                                        <FontAwesomeIcon icon={faPlus} className={cx('upload')} />
+                                    </button>
+                                </Link>
                             </Tippy>
                             <Tippy content="Messages" placement="bottom">
                                 <button className={cx('action-btn')}>
@@ -121,9 +132,9 @@ function Header() {
                                 </button>
                             </Tippy>
                             <Tippy content="Inbox" placement="bottom">
-                                <button className={cx('action-btn')}>
+                                <button className={cx('action-btn')} onClick={handleShowNotify}>
                                     <FontAwesomeIcon icon={faMessage} className={cx('btn-inbox')} />
-                                    <div className={cx('view-inbox')}>
+                                    <div className={cx('view-inbox')} style={style}>
                                         <Notify className={cx('notify')} children="Notifications" />
                                         <div className={cx('group-item')}>
                                             {itemNotify.map((item, index) => (
@@ -131,8 +142,8 @@ function Header() {
                                             ))}
                                         </div>
                                         <div className={cx('inbox-member')}>
-                                            <InboxList children="This week" className={cx('inbox-list')} />
-                                            <InboxList children="Previous" className={cx('inbox-list')} />
+                                            <InboxList children="This week" className={cx('inbox')} />
+                                            <InboxList children="Previous" className={cx('inbox')} />
                                         </div>
                                     </div>
                                 </button>
