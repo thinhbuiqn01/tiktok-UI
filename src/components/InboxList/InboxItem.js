@@ -1,8 +1,6 @@
 import Image from '../Image';
 import classNames from 'classnames/bind';
 import styles from './InboxList.module.scss';
-import { faArrowRightArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const cx = classNames.bind(styles);
 function InboxItem({ data, className }) {
     return (

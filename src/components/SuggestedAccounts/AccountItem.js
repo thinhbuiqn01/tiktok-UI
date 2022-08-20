@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './SuggestedAccounts.module.scss';
 import Image from '../Image';
-import { faCheck, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -24,7 +24,7 @@ function AccountItem({ label }) {
 }
 
 AccountItem.propTypes = {
-    //label: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
 };
 
 export default AccountItem;
