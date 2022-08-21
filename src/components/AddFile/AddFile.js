@@ -91,9 +91,13 @@ function AddFile() {
                     <label>Allow users to:</label>
                     <div className={cx('checkbox-option')}>
                         {checkboxOptions.map((item, index) => (
-                            <Checkbox data={item} key={index} />
+                            <Checkbox data={item} key={index} type="checkbox" />
                         ))}
                     </div>
+                </div>
+                <div className={cx('content-item')}>
+                    <Button outline children="Discard" />
+                    <Button disabled outline children="Post" />
                 </div>
             </div>
         </div>
