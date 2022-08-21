@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import AddFile from '~/components/AddFile';
 import Title from '~/components/Title';
+import Footer from '~/layouts/Footer';
 import styles from './Upload.module.scss';
 
 const cx = classNames.bind(styles);
@@ -13,6 +14,7 @@ function Upload() {
                     <AddFile caption="Caption" cover="Cover" select="Select File" />
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

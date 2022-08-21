@@ -1,9 +1,12 @@
 .wrapper {
-    display: flex;
+    width: 1050px;
     margin-top: 20px;
+}
+.grid-12 {
+    display: flex;
+    margin: 20px;
     width: 1050px;
 }
-
 .grid-4 {
     margin: 20px;
     position: relative;

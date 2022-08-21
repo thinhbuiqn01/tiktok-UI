@@ -11,7 +11,7 @@ import Description from './Description';
 
 const cx = classNames.bind(styles);
 
-function HomeVideo() {
+function HomeVideo({ following }) {
     const [result, setResult] = useState([]);
     useEffect(() => {
         fetch('http://127.0.0.1:8000/video')

@@ -1,0 +1,86 @@
+.wrapper {
+    width: 100%;
+    padding-bottom: 40px;
+    color: #fff;
+    background-color: #000;
+}
+footer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 40px 0 0 378px;
+}
+
+.tiktok-logo {
+    display: block;
+    position: absolute;
+    left: 144px;
+    top: 43px;
+}
+
+.logo-icon {
+    width: 33px;
+}
+
+.logo-text {
+    width: 120px;
+    margin-left: 6px;
+    position: relative;
+    top: -2px;
+}
+
+.footer-content-column {
+    flex: 1 1 0%;
+    max-width: 226px;
+    padding-right: 8px;
+    color: #fff;
+}
+
+.footer-bottom-wrapper {
+    padding: 0 144px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.copyright {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
+    line-height: 24px;
+    color: #8a8b91;
+    span {
+        margin-left: 4px;
+    }
+}
+
+.language-selection {
+    font-weight: 400;
+    box-sizing: border-box;
+    width: 172px;
+    height: 36px;
+    border: 1px solid #8a8b91;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 36px;
+    padding: 0 16px;
+    cursor: pointer;
+    position: relative;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.language-selection-form {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 16px;
+}
