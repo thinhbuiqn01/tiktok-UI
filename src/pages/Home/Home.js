@@ -5,9 +5,9 @@ import styles from './Home.module.scss';
 const cx = classNames.bind(styles);
 function Home() {
     return (
-        <h1 className={cx('wrapper')}>
+        <>
             <HomeVideo />
-        </h1>
+        </>
     );
 }
 

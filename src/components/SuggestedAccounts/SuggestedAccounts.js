@@ -2,22 +2,23 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
 import styles from './SuggestedAccounts.module.scss';
-import AccountItem from './AccountItem';
+import AccountItem from '~/components/AccountItem';
 
 const cx = classNames.bind(styles);
-function SuggestedAccounts({ label }) {
+function SuggestedAccounts({ label, data = [] }) {
     return (
         <div className={cx('wrapper')}>
             <p className={cx('label')}>{label}</p>
-            <AccountItem />
-            <AccountItem />
-            <AccountItem />
-            <div className={cx('btn-more')}>see all</div>
+            {data?.map((account) => (
+                <AccountItem key={account.id} data={account} />
+            ))}
+            <div className={cx('btn-more')}>See all</div>
         </div>
     );
 }
 SuggestedAccounts.propTypes = {
     label: PropTypes.string.isRequired,
+    data: PropTypes.array,
 };
 
 export default SuggestedAccounts;

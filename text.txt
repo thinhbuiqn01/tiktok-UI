@@ -1,0 +1,37 @@
+<div className={cx('recommend__list')} ref={videoRef} key={index}>
+                    <div className={cx('avatar')}>
+                        <img alt="" src={result.avatar} className={cx('avatar-img')} />
+                    </div>
+                    <div className={cx('content')}>
+                        <Title data={result} className={cx('title')} />
+                        <Description data={result} />
+                        <div className={cx('video-show')}>
+                            <div className={cx('video')}>
+                                <Video data={result} />
+                                <div className={cx('action')}>
+                                    <div className={cx('action-item')}>
+                                        <div className={cx('action-icon')}>
+                                            <FontAwesomeIcon icon={faHeart} className={cx('icon')} />
+                                        </div>
+                                        <span className={cx('action-count ')}>{result.countLike}</span>
+                                    </div>
+                                    <div className={cx('action-item')}>
+                                        <div className={cx('action-icon')}>
+                                            <FontAwesomeIcon icon={faCommentDots} className={cx('icon')} />
+                                        </div>
+                                        <span className={cx('action-count')}> {result.countComment}</span>
+                                    </div>
+                                    <div className={cx('action-item')}>
+                                        <div className={cx('action-icon')}>
+                                            <FontAwesomeIcon icon={faShare} className={cx('icon')} />
+                                        </div>
+                                        <span className={cx('action-count')}> {result.countShare}</span>
+                                    </div>
+                                </div>
+                                <Button primary small className={cx('btn-follow')}>
+                                    Follow
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>

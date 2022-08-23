@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import images from '~/asset/images';
 import styles from './Image.module.scss';
 
-//console.log(images.noImage);
-
 const Image = forwardRef(({ className, src, alt, fallback: customFallback = images.noImage, ...props }, ref) => {
     const [fallback, setFallback] = useState('');
 
@@ -18,7 +16,7 @@ const Image = forwardRef(({ className, src, alt, fallback: customFallback = imag
         <img
             className={classNames(styles.wrapper, className)}
             ref={ref}
-            src={fallback || src}
+            src={src || fallback}
             alt={alt}
             {...props}
             onError={handleError}
