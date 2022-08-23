@@ -14,3 +14,19 @@
 .nickname {
     display: flex;
 }
+
+.btn-profile {
+    margin-top: 12px;
+    height: 36px;
+}
+
+.count-infos {
+    display: flex;
+}
+.count-numbers {
+    padding-right: 30px;
+    display: flex;
+    strong {
+        padding-right: 6px;
+    }
+}

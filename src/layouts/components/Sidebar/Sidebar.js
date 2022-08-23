@@ -16,6 +16,7 @@ const PER_PAGE = 5;
 
 function Sidebar() {
     const [suggestedUser, setSuggestedUser] = useState([]);
+    const [followingUser, setFollowingUser] = useState([]);
 
     useEffect(() => {
         userService
@@ -26,6 +27,18 @@ function Sidebar() {
             .catch((error) => console.log(error));
     }, []);
 
+    useEffect(() => {
+        userService
+            .getSuggested({ page: 2, per_page: PER_PAGE })
+            .then((data) => {
+                /* điều kiện luôn sai vì không thể truy cập biến data.is_followed */
+                if (data.is_followed === true) {
+                } else {
+                    setFollowingUser(data);
+                }
+            })
+            .catch((error) => console.log(error));
+    }, []);
     return (
         <aside className={cx('wrapper')}>
             <Menu>
@@ -37,7 +50,7 @@ function Sidebar() {
                 />
                 <MenuItem title="LIVE" to={config.routes.live} icon={<FontAwesomeIcon icon={faVideoCamera} />} />
                 <SuggestedAccounts data={suggestedUser} label="Suggested accounts" />
-                <SuggestedAccounts label="Following accounts" />
+                <SuggestedAccounts data={followingUser} label="Following accounts" />
             </Menu>
         </aside>
     );

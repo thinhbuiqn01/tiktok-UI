@@ -14,7 +14,7 @@ function DefaultLayout({ children }) {
         <div className={cx('wrapper')}>
             <Header />
             <div className={cx('container')}>
-                <Sidebar />
+                <Sidebar className={cx('sidebar')} />
                 <div className={cx('content')}>{children}</div>
             </div>
             <Button onClick={handleGetApp} rounded small className={cx('get-app')}>

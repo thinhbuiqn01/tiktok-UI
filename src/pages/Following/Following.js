@@ -3,7 +3,7 @@ import HomeVideo from '~/layouts/components/HomeVideo';
 function Following() {
     return (
         <div>
-            <HomeVideo following />
+            <HomeVideo />
         </div>
     );
 }
